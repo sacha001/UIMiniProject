@@ -1,13 +1,14 @@
 package SketchApp;
 
+import javafx.geometry.Insets;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.ToolBar;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 
 public class SketchView extends Pane {
     private ToolBar toolBar;
@@ -18,6 +19,7 @@ public class SketchView extends Pane {
         BorderPane root = new BorderPane();
         root.setTop(toolBar);
         getChildren().add(root);
+        this.setBackground(new Background(new BackgroundFill(Color.WHITE , CornerRadii.EMPTY, Insets.EMPTY)));
     }
 
     private void createToolBar() {

@@ -22,6 +22,7 @@ public class AddSketchWidget {
         Button saveButton = new Button("Save");
         saveButton.setOnAction((event -> {
             Main.model.sketchNamesProperty().add(tf.getCharacters().toString());
+            dialog.close();
         }));
 
         dialogVbox.getChildren().add(tf);
