@@ -10,6 +10,7 @@ public class Model {
 
     private SimpleListProperty<String> sketchNames;
     private SimpleListProperty<Sketch> sketches;
+    private Sketch currentSketch;
 
     public Model() {
         ArrayList<String> al1 = new ArrayList<String>();
@@ -27,5 +28,13 @@ public class Model {
 
     public SimpleListProperty<Sketch> sketchesProperty() {
         return sketches;
+    }
+
+    public Sketch getCurrentSketch() {
+        return currentSketch;
+    }
+
+    public void setCurrentSketch(Sketch currentSketch) {
+        this.currentSketch = currentSketch;
     }
 }

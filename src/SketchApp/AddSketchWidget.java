@@ -2,6 +2,7 @@ package SketchApp;
 
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -11,7 +12,7 @@ import javafx.stage.Stage;
 public class AddSketchWidget {
     private final Stage dialog;
 
-    public AddSketchWidget(Stage primaryStage) {
+    public AddSketchWidget(Stage primaryStage, ListView listView) {
         dialog = new Stage();
         dialog.initModality(Modality.APPLICATION_MODAL);
         dialog.initOwner(primaryStage);
@@ -21,7 +22,9 @@ public class AddSketchWidget {
         TextField tf = new TextField();
         Button saveButton = new Button("Save");
         saveButton.setOnAction((event -> {
+
             Main.model.sketchNamesProperty().add(tf.getCharacters().toString());
+            Main.model.sketchesProperty().add(new Sketch(tf.getCharacters().toString()));
             dialog.close();
         }));
 
