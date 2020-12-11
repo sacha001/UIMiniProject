@@ -49,12 +49,14 @@ public class Main extends Application {
         help.getItems().addAll(about, helpItem);
         mb.getMenus().addAll(file, help);
 
-        splitPane.getItems().addAll(sketchListView, sketchView);
+        //splitPane.getItems().addAll(sketchListView, sketchView);
         root.setTop(mb);
-        root.setCenter(splitPane);
+        root.setLeft(sketchListView);
+        root.setCenter(sketchView);
 
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Ultimate Sketching App");
         primaryStage.setScene(new Scene(root, 1000, 500));
+        primaryStage.setResizable(false);
         loadSplashScreen(primaryStage);
 
         //Event handler for exit menu item

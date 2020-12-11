@@ -23,8 +23,8 @@ public class AddSketchWidget {
         Button saveButton = new Button("Save");
         saveButton.setOnAction((event -> {
 
-            Main.model.sketchNamesProperty().add(tf.getCharacters().toString());
             Main.model.sketchesProperty().add(new Sketch(tf.getCharacters().toString()));
+            Main.model.sketchNamesProperty().add(tf.getCharacters().toString());
             dialog.close();
         }));
 
